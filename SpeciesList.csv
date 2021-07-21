@@ -1,0 +1,91 @@
+taxaID,speciesName,organismName,kingdom,accession,validData
+294,Pseudomonas fluorescens,Pseudomonas fluorescens (g-proteobacteria),Bacteria,GCF_900215245.1,1
+883,Desulfovibrio vulgaris,Desulfovibrio vulgaris str. &apos;Miyazaki F&apos; (d-proteobacteria),Bacteria,GCF_000021385.1,1
+1140,Synechococcus elongatus,Synechococcus elongatus PCC 7942 = FACHB-805 (cyanobacteria),Bacteria,GCF_000012525.1,1
+3702,Arabidopsis thaliana,Arabidopsis thaliana (thale cress),Eukaryota,GCF_000001735.4,1
+5823,Plasmodium berghei,Plasmodium berghei ANKA (apicomplexans),Eukaryota,GCF_900002375.2,1
+6239,Caenorhabditis elegans,Caenorhabditis elegans (roundworm),Eukaryota,GCF_000002985.6,1
+7227,Drosophila melanogaster,Drosophila melanogaster (fruit fly),Eukaryota,GCF_000001215.4,1
+7955,Danio rerio,Danio rerio (zebrafish),Eukaryota,GCF_000002035.6,1
+9606,Homo sapiens,Homo sapiens (human),Eukaryota,GCF_000001405.39,1
+10090,Mus musculus,Mus musculus (house mouse),Eukaryota,GCF_000001635.27,1
+36329,Plasmodium falciparum,Plasmodium falciparum 3D7 (malaria parasite P. falciparum),Eukaryota,GCF_000002765.5,1
+62977,Acinetobacter baylyi,Acinetobacter baylyi ADP1 (g-proteobacteria),Bacteria,GCF_000046845.1,1
+68895,Cupriavidus basilensis,Cupriavidus basilensis (b-proteobacteria),Bacteria,GCF_008801925.2,1
+71421,Haemophilus influenzae,,Bacteria,,0
+83332,Mycobacterium tuberculosis,Mycobacterium tuberculosis H37Rv (high GC Gram+),Bacteria,GCF_000195955.2,1
+83333,Escherichia coli,Escherichia coli str. K-12 substr. MG1655 (E. coli),Bacteria,GCF_000005845.2,1
+85962,Helicobacter pylori,Helicobacter pylori 26695 (e-proteobacteria),Bacteria,GCF_000307795.1,1
+93061,Staphylococcus aureus,Staphylococcus aureus subsp. aureus NCTC 8325 (firmicutes),Bacteria,GCF_000013425.1,1
+93064,Sphingomonas koreensis,Sphingomonas koreensis (a-proteobacteria),Bacteria,GCF_003950925.1,1
+94122,Shewanella,Shewanella sp. ANA-3 (g-proteobacteria),Bacteria,GCF_000203935.1,1
+99287,Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium str. LT2 (enterobacteria),Bacteria,GCF_000006945.2,1
+171101,Streptococcus pneumoniae,Streptococcus pneumoniae R6 (firmicutes),Bacteria,GCF_000007045.1,1
+176299,Agrobacterium fabrum,Agrobacterium fabrum str. C58 (a-proteobacteria),Bacteria,GCF_000092025.1,1
+185431,Trypanosoma brucei,Trypanosoma brucei brucei TREU927 (kinetoplastids),Eukaryota,GCF_000002445.2,1
+187410,Yersinia pestis,Yersinia pestis KIM10+ (enterobacteria),Bacteria,GCF_000006645.1,1
+192222,Campylobacter jejuni,Campylobacter jejuni subsp. jejuni NCTC 11168 = ATCC 700819 (e-proteobacteria),Bacteria,GCF_000009085.1,1
+199310,Escherichia coli,Escherichia coli CFT073 (E. coli),Bacteria,GCF_014262945.1,1
+205921,Streptococcus agalactiae,Streptococcus agalactiae A909 (firmicutes),Bacteria,GCF_000012705.1,1
+208963,Pseudomonas aeruginosa,Pseudomonas aeruginosa UCBPP-PA14 (g-proteobacteria),Bacteria,GCF_000014625.1,1
+208964,Pseudomonas aeruginosa,Pseudomonas aeruginosa PAO1 (g-proteobacteria),Bacteria,GCF_000006765.1,1
+209261,Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhi str. Ty2 (enterobacteria),Bacteria,GCF_000007545.1,1
+211586,Shewanella oneidensis,Shewanella oneidensis MR-1 (g-proteobacteria),Bacteria,GCF_013267215.1,1
+216591,Burkholderia cenocepacia,Burkholderia cenocepacia J2315 (b-proteobacteria),Bacteria,GCF_000009485.1,1
+216596,Rhizobium leguminosarum,Rhizobium leguminosarum bv. viciae 3841 (a-proteobacteria),Bacteria,GCF_000009265.1,1
+216597,Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344 (enterobacteria),Bacteria,GCF_000210855.2,1
+220341,Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhi str. CT18 (enterobacteria),Bacteria,GCF_000195995.1,1
+224308,Bacillus subtilis,Bacillus subtilis subsp. subtilis str. 168 (firmicutes),Bacteria,GCF_000009045.1,1
+225937,Marinobacter adhaerens,Marinobacter adhaerens HP15 (g-proteobacteria),Bacteria,GCF_000166295.1,1
+226186,Bacteroides thetaiotaomicron,Bacteroides thetaiotaomicron VPI-5482 (CFB group bacteria),Bacteria,GCF_000011065.1,1
+227321,Aspergillus nidulans,Aspergillus nidulans FGSC A4 (ascomycetes),Eukaryota,GCF_000149205.2,1
+243273,Mycoplasma genitalium,Mycoplasma genitalium G37 (mycoplasmas),Bacteria,GCF_000027325.1,1
+258594,Rhodopseudomonas palustris,Rhodopseudomonas palustris CGA009 (a-proteobacteria),Bacteria,GCF_000195775.1,1
+266834,Sinorhizobium meliloti,Sinorhizobium meliloti 1021 (a-proteobacteria),Bacteria,GCF_000006965.1,1
+267377,Methanococcus maripaludis,Methanococcus maripaludis S2 (euryarchaeotes),Archaea,GCF_000011585.1,1
+271848,Burkholderia thailandensis,Burkholderia thailandensis E264 (b-proteobacteria),Bacteria,GCF_000012365.1,1
+272560,Burkholderia pseudomallei,Burkholderia pseudomallei K96243 (b-proteobacteria),Bacteria,GCF_000959285.1,1
+272634,Mycoplasma pneumoniae,Mycoplasma pneumoniae M129 (mycoplasmas),Bacteria,GCF_910574535.1,1
+272635,Mycoplasma pulmonis,Mycoplasma pulmonis UAB CTIP (mycoplasmas),Bacteria,GCF_000195875.1,1
+284812,,,,,0
+285498,,,,,0
+290336,,,,,0
+293653,Streptococcus pyogenes,Streptococcus pyogenes MGAS5005 (firmicutes),Bacteria,GCF_000011765.3,1
+321846,Pseudomonas simiae,Pseudomonas simiae (g-proteobacteria),Bacteria,GCF_000934565.1,1
+323850,Shewanella loihica,Shewanella loihica PV-4 (g-proteobacteria),Bacteria,GCF_000016065.1,1
+326297,Shewanella amazonensis,Shewanella amazonensis SB2B (g-proteobacteria),Bacteria,GCF_000015245.1,1
+330879,Aspergillus fumigatus,Aspergillus fumigatus Af293 (ascomycetes),Eukaryota,GCF_000002655.1,1
+354242,Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 81-176 (e-proteobacteria),Bacteria,GCF_000015525.1,1
+373153,Streptococcus pneumoniae,Streptococcus pneumoniae D39 (firmicutes),Bacteria,GCF_000014365.2,1
+388919,Streptococcus sanguinis,Streptococcus sanguinis SK36 (firmicutes),Bacteria,GCF_000014205.1,1
+392499,Sphingomonas wittichii,Sphingomonas wittichii RW1 (a-proteobacteria),Bacteria,GCF_000016765.1,1
+398527,Paraburkholderia phytofirmans,Paraburkholderia phytofirmans PsJN (b-proteobacteria),Bacteria,GCF_000020125.1,1
+398580,Dinoroseobacter shibae,Dinoroseobacter shibae DFL 12 = DSM 16493 (a-proteobacteria),Bacteria,GCF_000018145.1,1
+400667,Acinetobacter baumannii,Acinetobacter baumannii ATCC 17978 (g-proteobacteria),Bacteria,GCF_013372085.1,1
+401614,Francisella tularensis subsp. novicida,Francisella tularensis subsp. novicida U112 (g-proteobacteria),Bacteria,GCF_000833375.1,1
+425011,Aspergillus niger,Aspergillus niger CBS 513.88 (ascomycetes),Eukaryota,GCF_000002855.3,1
+431947,Porphyromonas gingivalis,Porphyromonas gingivalis ATCC 33277 (CFB group bacteria),Bacteria,GCF_000010505.1,1
+471876,Streptococcus pyogenes,Streptococcus pyogenes NZ131 (firmicutes),Bacteria,GCF_000018125.1,1
+507601,Toxoplasma gondii,,Eukaryota,,0
+510516,Aspergillus oryzae,Aspergillus oryzae RIB40 (ascomycetes),Eukaryota,GCF_000184455.2,1
+528354,Neisseria gonorrhoeae,Neisseria gonorrhoeae MS11 (b-proteobacteria),Bacteria,GCF_000156855.2,1
+535206,Enterococcus faecium,Enterococcus faecium E1162 (firmicutes),Bacteria,GCF_000172675.1,1
+565050,Caulobacter vibrioides,Caulobacter vibrioides NA1000 (a-proteobacteria),Bacteria,GCF_000022005.1,1
+588858,Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S (enterobacteria),Bacteria,GCF_008244785.1,1
+633149,Brevundimonas subvibrioides,Brevundimonas subvibrioides ATCC 15264 (a-proteobacteria),Bacteria,GCF_000144605.1,1
+640081,Azospira oryzae,Azospira oryzae PS (b-proteobacteria),Bacteria,GCF_000236665.1,1
+644801,Pseudomonas stutzeri,Pseudomonas stutzeri RCH2 (g-proteobacteria),Bacteria,GCF_000327065.1,1
+679895,Escherichia coli,Escherichia coli BW25113 (E. coli),Bacteria,GCF_000750555.1,1
+709015,Pontibacter actiniarum,Pontibacter actiniarum DSM 19842 (CFB group bacteria),Bacteria,GCF_000472485.1,1
+714359,Bacillus thuringiensis,Bacillus thuringiensis BMB171 (firmicutes),Bacteria,GCF_000092165.1,1
+757424,Herbaspirillum seropedicae,Herbaspirillum seropedicae SmR1 (b-proteobacteria),Bacteria,GCF_000143225.1,1
+862962,Bacteroides fragilis,Bacteroides fragilis 638R (CFB group bacteria),Bacteria,GCF_000210835.1,1
+926556,Echinicola vietnamensis,Echinicola vietnamensis DSM 17526 (CFB group bacteria),Bacteria,GCF_000325705.1,1
+941322,Escherichia coli,Escherichia coli O25b:H4-ST131 (E. coli),Bacteria,GCF_000285655.3,1
+1064539,Azospirillum baldaniorum,Azospirillum baldaniorum (a-proteobacteria),Bacteria,GCF_007827765.1,1
+1122134,Kangiella aquimarina,Kangiella aquimarina DSM 16071 (g-proteobacteria),Bacteria,GCF_000374105.1,1
+1124478,Vibrio cholerae,Vibrio cholerae O1 str. C6706 (g-proteobacteria),Bacteria,GCF_000237785.1,1
+1380365,Dyella japonica,Dyella japonica UNC79MFTsu3.2 (g-proteobacteria),Bacteria,GCF_000620485.1,1
+1423144,Phaeobacter gallaeciensis,Phaeobacter gallaeciensis DSM 26640 (a-proteobacteria),Bacteria,GCF_000511385.1,1
+1813946,Acidovorax,Acidovorax sp. GW101-3H11 (b-proteobacteria),Bacteria,GCF_001633105.1,1
+1986952,Sphingobacteriaceae bacterium GW460-11-11-14-LB5,,Bacteria,,0
