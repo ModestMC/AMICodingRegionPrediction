@@ -15,12 +15,13 @@ setSize = 2000;
 minK = 1;
 maxK = 16;
 forceDownload = false;
+taxIdFile = 'TaxonomicIDList.csv';
+outputFile = 'CodingRegion_CrossSpecies.xlsx';
 
 
 % Get Data (if necessary)
 genomeFolder = 'NCBIGenomes';
 speciesListFile = 'SpeciesList.csv';
-taxIdFile = 'TaxonomicIDList.csv';
 
 if (forceDownload || ~isfolder(genomeFolder) || ~isfile(speciesListFile))
 	if (~isfile(taxIdFile))
@@ -143,8 +144,8 @@ for t=1:length(profiles)
     a = [squeeze(AUCs(t, valid, valid)), squeeze(sens(t, valid, valid)), squeeze(spec(t, valid, valid))];
     a = a(:, reshape(reshape(1:size(a, 2), size(a, 2)/3, [])', 1, []));
     aTable = array2table(a, 'RowNames', species.organismName(valid));
-    writetable(aTable, 'CodingRegion_CrossSpecies.xlsx', 'WriteRow', true, 'Sheet', figLegend{2*t-1});
+    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', figLegend{2*t-1});
 	
     aTable = array2table(squeeze(AUCsEucl(t, valid, valid)), 'RowNames', species.organismName(valid));
-    writetable(aTable, 'CodingRegion_CrossSpecies.xlsx', 'WriteRow', true, 'Sheet', figLegend{2*t});
+    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', figLegend{2*t});
 end

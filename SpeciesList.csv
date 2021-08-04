@@ -48,7 +48,6 @@ taxaID,speciesName,organismName,kingdom,accession,validData
 272634,Mycoplasma pneumoniae,Mycoplasma pneumoniae M129 (mycoplasmas),Bacteria,GCF_910574535.1,1
 272635,Mycoplasma pulmonis,Mycoplasma pulmonis UAB CTIP (mycoplasmas),Bacteria,GCF_000195875.1,1
 284812,,,,,0
-285498,,,,,0
 290336,,,,,0
 293653,Streptococcus pyogenes,Streptococcus pyogenes MGAS5005 (firmicutes),Bacteria,GCF_000011765.3,1
 321846,Pseudomonas simiae,Pseudomonas simiae (g-proteobacteria),Bacteria,GCF_000934565.1,1
@@ -70,6 +69,7 @@ taxaID,speciesName,organismName,kingdom,accession,validData
 510516,Aspergillus oryzae,Aspergillus oryzae RIB40 (ascomycetes),Eukaryota,GCF_000184455.2,1
 528354,Neisseria gonorrhoeae,Neisseria gonorrhoeae MS11 (b-proteobacteria),Bacteria,GCF_000156855.2,1
 535206,Enterococcus faecium,Enterococcus faecium E1162 (firmicutes),Bacteria,GCF_000172675.1,1
+559292,Saccharomyces cerevisiae,Saccharomyces cerevisiae S288C (baker's yeast),Eukaryota,GCF_000146045.2,1
 565050,Caulobacter vibrioides,Caulobacter vibrioides NA1000 (a-proteobacteria),Bacteria,GCF_000022005.1,1
 588858,Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S (enterobacteria),Bacteria,GCF_008244785.1,1
 633149,Brevundimonas subvibrioides,Brevundimonas subvibrioides ATCC 15264 (a-proteobacteria),Bacteria,GCF_000144605.1,1
