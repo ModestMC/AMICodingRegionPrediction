@@ -34,6 +34,7 @@ if (forceDownload || ~isfolder(genomeFolder) || ~isfile(speciesListFile))
 	end
 	
 	getGenomes(species.taxaID);
+    compileCodingNoncoding;
 end
 
 if (~any(contains({dir(genomeFolder).name}, '_coding_noncoding.fasta')))
@@ -63,7 +64,7 @@ cSVM = cell(length(profiles), length(species.taxaID));
 %% Train SVMs
 for k=1:length(species.accession)
 
-    if (~any(ismissing(species.accession{k})) && exist(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta']), 'file'))
+    if (~any(ismissing(species.accession{k})) && isfile(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta'])))
 	
 		disp(['Training SVM for ' species.speciesName{k}]);
         [headers, sequences] = fastaread(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta']));
@@ -115,7 +116,7 @@ end
 for t=1:length(profiles)
     for k=1:length(species.accession)
         disp(['Making predictions using SVM on ', profiles{t}, ' for ' species.speciesName{k}]);
-        if (~any(ismissing(species.accession{k})) && exist(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta']), 'file'))
+        if (~any(ismissing(species.accession{k})) && isfile(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta'])))
             codingAvg = mean(profileValsTrain{t, k}(allClass == 1, :));
             noncodingAvg = mean(profileValsTrain{t, k}(allClass == -1, :));
             
@@ -139,13 +140,24 @@ end
 
 
 %% Export results
-valid = squeeze(AUCs(1, 1, :)>0) & ~cellfun(@isempty, species.organismName);
+if (isfile(outputFile))
+    delete(outputFile);
+end
+valid = any(squeeze(AUCs(1, :,:))>0)' & ~cellfun(@isempty, species.organismName);
+columnHeader = cell(1, 3 * sum(valid));
+columnHeader(1:3:end) = species.organismName(valid)';
+columSubheader = ['Training Species', repmat({'AUC', 'Sensitivity', 'Specificity'}, 1, sum(valid))];
+
 for t=1:length(profiles)
     a = [squeeze(AUCs(t, valid, valid)), squeeze(sens(t, valid, valid)), squeeze(spec(t, valid, valid))];
     a = a(:, reshape(reshape(1:size(a, 2), size(a, 2)/3, [])', 1, []));
     aTable = array2table(a, 'RowNames', species.organismName(valid));
-    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', figLegend{2*t-1});
+    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', figLegend{2*t-1}, 'Range', 'A2');
+    writecell(columnHeader, outputFile, 'Sheet', figLegend{2*t-1}, 'Range', 'B1');
+    writecell(columSubheader, outputFile, 'Sheet', figLegend{2*t-1}, 'Range', 'A2');
 	
     aTable = array2table(squeeze(AUCsEucl(t, valid, valid)), 'RowNames', species.organismName(valid));
-    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', figLegend{2*t});
+    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', figLegend{2*t}, 'Range', 'A2');
+    writecell(columnHeader, outputFile, 'Sheet', figLegend{2*t}, 'Range', 'B1');
+    writecell(columSubheader, outputFile, 'Sheet', figLegend{2*t}, 'Range', 'A2');
 end
