@@ -23,7 +23,7 @@ We now need the taxonomic ID for the sequences we are interested in.  We can get
 
 We store this list of IDs in a .csv file.  The default name for the file is **TaxonomicIDList.csv**.  We can change the default name if we want to by changing the value of the variable **taxIdFile** on line 23.  In our case the file **TaxonomicIDList.csv** looks like this: 
 
-taxaID
+taxaID  
 559292  
 588858  
 1124478  
