@@ -17,16 +17,16 @@ Suppose one is interested in determining the effectiveness of cross-species codi
 
 We now need the taxonomic ID for the sequences we are interested in.  We can get them from the NCBI taxonomy page.  If we do that we get the following set of taxonomic IDs
 
-*S. cerevisiae S288C*: 559292
-*S. enterica subsp. enterica serovar Typhimurium str. 14028S*: 588858
-*V. cholerae O1 str. C6706*: 1124478
+*S. cerevisiae S288C*: 559292  
+*S. enterica subsp. enterica serovar Typhimurium str. 14028S*: 588858  
+*V. cholerae O1 str. C6706*: 1124478  
 
 We store this list of IDs in a .csv file.  The default name for the file is **TaxonomicIDList.csv**.  We can change the default name if we want to by changing the value of the variable **taxIdFile** on line 23.  In our case the file **TaxonomicIDList.csv** looks like this: 
 
 taxaID
-559292
-588858
-1124478
+559292  
+588858  
+1124478  
 
 Assuming this is the first time we are using this program we can simply run **predictCodingCrossSpecies.m**.  The program will use the function **getGenomes.m** to download the genomes from NCBI.  In this example the command window in MATLAB will show the progression of the program:
 
