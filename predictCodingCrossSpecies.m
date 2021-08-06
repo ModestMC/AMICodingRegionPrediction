@@ -23,17 +23,24 @@ outputFile = 'CodingRegion_CrossSpecies.xlsx';
 genomeFolder = 'NCBIGenomes';
 speciesListFile = 'SpeciesList.csv';
 
+if (~isfile(taxIdFile))
+    error(['A list of taxonomic IDs must exist in file ', taxIdFile]);
+end
+    
+idList = readtable('TaxonomicIDList.csv');
+if (length(idList.Properties.VariableNames) > 1 || ~strcmp(idList.Properties.VariableNames, 'taxaID'))
+    error(['A list of taxonomic IDs must exist in file ', taxIdFile, 'with header "taxaID"']);
+end
+
+if (isfile(speciesListFile))
+    species = readtable(speciesListFile);
+    if (any(~ismember(idList.taxaID, species.taxaID)))
+        forceDownload = true;
+    end
+end
+
 if (forceDownload || ~isfolder(genomeFolder) || ~isfile(speciesListFile))
-	if (~isfile(taxIdFile))
-		error(['A list of taxonomic IDs must exist in file ', taxIdFile]);
-	end
-	species = readtable('TaxonomicIDList.csv');
-	
-	if (length(species.Properties.VariableNames) > 1 || ~strcmp(species.Properties.VariableNames, 'taxaID'))
-		error(['A list of taxonomic IDs must exist in file ', taxIdFile, 'with header "taxaID"']);
-	end
-	
-	getGenomes(species.taxaID);
+	getGenomes(idList.taxaID);
     compileCodingNoncoding;
 end
 
@@ -64,7 +71,9 @@ cSVM = cell(length(profiles), length(species.taxaID));
 %% Train SVMs
 for k=1:length(species.accession)
 
-    if (~any(ismissing(species.accession{k})) && isfile(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta'])))
+    if (~any(ismissing(species.accession{k})) &&...
+        isfile(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta'])) &&...
+        ismember(species.taxaID(k), idList.taxaID))
 	
 		disp(['Training SVM for ' species.speciesName{k}]);
         [headers, sequences] = fastaread(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta']));
@@ -116,7 +125,11 @@ end
 for t=1:length(profiles)
     for k=1:length(species.accession)
         disp(['Making predictions using SVM on ', profiles{t}, ' for ' species.speciesName{k}]);
-        if (~any(ismissing(species.accession{k})) && isfile(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta'])))
+        
+        if (~any(ismissing(species.accession{k})) &&...
+            isfile(fullfile(genomeFolder, [strrep(species.accession{k}, 'A', 'F'), '_coding_noncoding.fasta'])) &&...
+            ismember(species.taxaID(k), idList.taxaID))
+    
             codingAvg = mean(profileValsTrain{t, k}(allClass == 1, :));
             noncodingAvg = mean(profileValsTrain{t, k}(allClass == -1, :));
             

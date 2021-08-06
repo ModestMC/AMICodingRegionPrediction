@@ -12,7 +12,6 @@ taxaID,speciesName,organismName,kingdom,accession,validData
 36329,Plasmodium falciparum,Plasmodium falciparum 3D7 (malaria parasite P. falciparum),Eukaryota,GCF_000002765.5,1
 62977,Acinetobacter baylyi,Acinetobacter baylyi ADP1 (g-proteobacteria),Bacteria,GCF_000046845.1,1
 68895,Cupriavidus basilensis,Cupriavidus basilensis (b-proteobacteria),Bacteria,GCF_008801925.2,1
-71421,Haemophilus influenzae,,Bacteria,,0
 83332,Mycobacterium tuberculosis,Mycobacterium tuberculosis H37Rv (high GC Gram+),Bacteria,GCF_000195955.2,1
 83333,Escherichia coli,Escherichia coli str. K-12 substr. MG1655 (E. coli),Bacteria,GCF_000005845.2,1
 85962,Helicobacter pylori,Helicobacter pylori 26695 (e-proteobacteria),Bacteria,GCF_000307795.1,1
@@ -47,8 +46,6 @@ taxaID,speciesName,organismName,kingdom,accession,validData
 272560,Burkholderia pseudomallei,Burkholderia pseudomallei K96243 (b-proteobacteria),Bacteria,GCF_000959285.1,1
 272634,Mycoplasma pneumoniae,Mycoplasma pneumoniae M129 (mycoplasmas),Bacteria,GCF_910574535.1,1
 272635,Mycoplasma pulmonis,Mycoplasma pulmonis UAB CTIP (mycoplasmas),Bacteria,GCF_000195875.1,1
-284812,,,,,0
-290336,,,,,0
 293653,Streptococcus pyogenes,Streptococcus pyogenes MGAS5005 (firmicutes),Bacteria,GCF_000011765.3,1
 321846,Pseudomonas simiae,Pseudomonas simiae (g-proteobacteria),Bacteria,GCF_000934565.1,1
 323850,Shewanella loihica,Shewanella loihica PV-4 (g-proteobacteria),Bacteria,GCF_000016065.1,1
@@ -65,7 +62,6 @@ taxaID,speciesName,organismName,kingdom,accession,validData
 425011,Aspergillus niger,Aspergillus niger CBS 513.88 (ascomycetes),Eukaryota,GCF_000002855.3,1
 431947,Porphyromonas gingivalis,Porphyromonas gingivalis ATCC 33277 (CFB group bacteria),Bacteria,GCF_000010505.1,1
 471876,Streptococcus pyogenes,Streptococcus pyogenes NZ131 (firmicutes),Bacteria,GCF_000018125.1,1
-507601,Toxoplasma gondii,,Eukaryota,,0
 510516,Aspergillus oryzae,Aspergillus oryzae RIB40 (ascomycetes),Eukaryota,GCF_000184455.2,1
 528354,Neisseria gonorrhoeae,Neisseria gonorrhoeae MS11 (b-proteobacteria),Bacteria,GCF_000156855.2,1
 535206,Enterococcus faecium,Enterococcus faecium E1162 (firmicutes),Bacteria,GCF_000172675.1,1
@@ -88,4 +84,3 @@ taxaID,speciesName,organismName,kingdom,accession,validData
 1380365,Dyella japonica,Dyella japonica UNC79MFTsu3.2 (g-proteobacteria),Bacteria,GCF_000620485.1,1
 1423144,Phaeobacter gallaeciensis,Phaeobacter gallaeciensis DSM 26640 (a-proteobacteria),Bacteria,GCF_000511385.1,1
 1813946,Acidovorax,Acidovorax sp. GW101-3H11 (b-proteobacteria),Bacteria,GCF_001633105.1,1
-1986952,Sphingobacteriaceae bacterium GW460-11-11-14-LB5,,Bacteria,,0

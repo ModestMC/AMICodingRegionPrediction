@@ -15,7 +15,7 @@ Running the script **predictCodingCrossSpecies.m** does the following for each t
 	- **seqLength** - Sequence length used for both training and testing the SVMs (default: 1000 basepairs)
 	- **setSize** - The number of sequences drawn from the coding and noncoding parent sequences for both the training and test sets (default: 2000)
 	- **minK/maxK** - Minimium and maximum lag *k* used to generated the AMI-derived profiles. The profiles consist of values for all lags between and including these extrema (default: 1/16).
-	- **forceDownload** - If true, assembly files will be downloaded from NCBI even if the directory **NCBIGenomes** and the file **SpeciesList.csv** already exist. If false, assembly files will only be downloaded if one or both does not exist (default: false).
+	- **forceDownload** - If true, assembly files will be downloaded from NCBI even if the directory **NCBIGenomes** and the file **SpeciesList.csv** already exist, and the list in **TaxonomicIDList.csv** contains no IDs that do not occur in **SpeciesList.csv**. If false, assembly files will only be downloaded if one of those conditions is not met (default: false).
 	- **taxIdFile** - File name of the taxonomic ID list (default: **TaxonomicIDList.csv**).
 	- **outputFile** - File name of the output results (default: **CodingRegion_CrossSpecies.xlsx**).
 2. Compile a list of taxonomic IDs corresponding to species of interest and place them in the taxonomic ID list file. The file consists of a single column, with one ID per row.
