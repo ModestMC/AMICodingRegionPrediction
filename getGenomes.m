@@ -15,7 +15,7 @@ function getGenomes(taxaID)
 
 	for i=1:length(species.taxaID)
 		try
-			fprintf('Obtaining genome for Taxonomoic ID %d\n', species.taxaID(i));
+			fprintf('Obtaining genome for Taxonomic ID %d\n', species.taxaID(i));
 			baseURL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
 			eutil = 'esearch.fcgi?';
 			dbParam = 'db=genome';
