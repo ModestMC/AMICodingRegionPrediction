@@ -1,18 +1,29 @@
 ## Usage
+
+##### predictCodingCrossSpecies.m
 1. Configure input parameters as desired. These appear at the top of **predictCodingCrossSpecies.m**:
 	- **seqLength** - Sequence length used for both training and testing the SVMs (default: 1000 basepairs)
 	- **setSize** - The number of sequences drawn from the coding and noncoding parent sequences for both the training and test sets (default: 2000)
 	- **minK/maxK** - Minimium and maximum lag *k* used to generated the AMI-derived profiles. The profiles consist of values for all lags between and including these extrema (default: 1/16).
 	- **forceDownload** - If true, assembly files will be downloaded from NCBI even if the directory **NCBIGenomes** and the file **SpeciesList.csv** already exist, and the list in **TaxonomicIDList.csv** contains no IDs that do not occur in **SpeciesList.csv**. If false, assembly files will only be downloaded if one of those conditions is not met (default: false).
 	- **taxIdFile** - File name of the taxonomic ID list (default: **TaxonomicIDList.csv**).
-	- **outputFile** - File name of the output results (default: **CodingRegion_CrossSpecies.xlsx**).
+	- **outputFile** - File name of the output results. Must be XLSX (default: **CodingRegion_CrossSpecies.xlsx**).
 2. Compile a list of taxonomic IDs corresponding to species of interest and place them in the taxonomic ID list file. The file consists of a single column, with one ID per row.
 3. Run **predictCodingCrossSpecies.m** from the MATLAB command line
-4. Examine results in output file **CodingRegion_CrossSpecies.xlsx**. Each sheet corresponds to a different profile (eaAMI, eAMI, or AMI) and classifier (SVM or Euclidean distance) pair. Each row provides performance metrics for a classifier trained on sequences drawn from the species indicated in the row header. Each set of 3 columns shows the results (AUC, sensitivity, and specificity) when testing that classifier on sequences drawn from each test species. If a species provided in the taxonomic ID list does not appear in the results file, it is likely that an assembly could not be found for it (indicated by the **validData** column of **SpeciesList.csv**).     
+4. Examine results in output file. Each sheet corresponds to a different profile (eaAMI, eAMI, or AMI) and classifier (SVM or Euclidean distance) pair. Each row provides performance metrics for a classifier trained on sequences drawn from the species indicated in the row header. Each set of 3 columns shows the results (AUC, sensitivity, and specificity) when testing that classifier on sequences drawn from each test species. If a species provided in the taxonomic ID list does not appear in the results file, it is likely that an assembly could not be found for it (indicated by the **validData** column of **SpeciesList.csv**).     
 
 *Note*: If the configuration parameters are left at their defaults and **TaxonomicIDList.csv** is *not* modified, the script will use the assembly files provided in the **NCBIGenomes** directory. This is a collection of a few small genomes for species included in **TaxonomicIDList.csv**.  
 
-## Example
+##### predictCoding.m
+1. Configure input parameters as desired. These appear at the top of **predictCoding.m**. These are the same as for **predictCodingCrossSpecies.m** except for the following:
+	- **trainTaxaID** - Taxonomic ID of species used for training the SVMs (default: 400667).
+	- **inputFile** - Name of the multi-FASTA file containing sequences of interest to be scored using the SVMs (default: **GCF_000046845.1_ASM4684v1_cds_from_genomic.fna**).
+	- **outputFile** - File name of the output results. Can be XLSX, CSV, or TXT (default: **CodingRegion_PredictionScores.xlsx**).
+2. Run **predictCoding.m** from the MATLAB command line
+3. Examine results in output file. The first column contains each of the headers from the multi-FASTA file. The second column contains the length of each sequence, in basepairs. Columns 3-5 contain the SVM scores for each sequence using the profile noted in the column header. Positive scores indicate that the sequence is predicted to be coding. Higher magnitude scores imply a higher probability that the sequence is coding or noncoding. Typically, eAMI will provide better results for short sequences (less than 250 basepairs), while eaAMI will provide better results for long sequences. 
+      
+
+## Example (predictCodingCrossSpecies.m)
 Suppose one is interested in determining the effectiveness of cross-species coding region predictions for *S. cerevisiae S288C*, *S. enterica subsp. enterica serovar Typhimurium str. 14028S*, and *V. cholerae O1 str. C6706*. Suppose also we want the length of the sequences to be 200 bp and we want to use 1000 sequences for training and testing.  The input parameter setup is the first porion of the MATLAB program **predictCodingCrossSpecies.m**.  On line 13 we set **seqLength** to 200, and on line 14 we set **setSize** to 1000.
 
 We now need the taxonomic ID for the sequences we are interested in.  We can get them from the NCBI taxonomy page.  If we do that we get the following set of taxonomic IDs

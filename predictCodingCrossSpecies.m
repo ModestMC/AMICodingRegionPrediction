@@ -6,7 +6,7 @@
 % 4. Train an SVM on the profiles in the training set
 % 5. Use that SVM to predict whether test sequences drawn from each of the 
 %    other species is coding or noncoding
-% 6. Output prediction metrics to 'CodingRegion_CrossSpecies.xlsx' 
+% 6. Output prediction metrics to output file (XLSX) 
 
 
 %% Input Parameters
@@ -54,9 +54,7 @@ species = readtable(speciesListFile);
 species.validData = logical(species.validData);
 
 profiles = {'eaAMI', 'eAMI', 'AMI'};
-figLegend = cell(2*length(profiles), 1);
-
-l=1;
+sheetNames = cell(2*length(profiles), 1);
 
 AUCs = zeros(length(profiles), length(species.taxaID), length(species.taxaID));
 sens = zeros(length(profiles), length(species.taxaID), length(species.taxaID));
@@ -87,22 +85,22 @@ for k=1:length(species.accession)
         testSequence = cell(length(allClass)/2, 2);
 		
         for i=1:length(trainSequence)
-            idx = randi(length(noncoding) - seqLength(l));
-            trainSequence{i, 1} = noncoding(idx:idx+seqLength(l)-1);
-            idx = randi(length(coding) - seqLength(l));
-            trainSequence{i, 2} = coding(idx:idx+seqLength(l)-1);
+            idx = randi(length(noncoding) - seqLength);
+            trainSequence{i, 1} = noncoding(idx:idx+seqLength-1);
+            idx = randi(length(coding) - seqLength);
+            trainSequence{i, 2} = coding(idx:idx+seqLength-1);
             
-            idx = randi(length(noncoding) - seqLength(l));
-            testSequence{i, 1} = noncoding(idx:idx+seqLength(l)-1);
-            idx = randi(length(coding) - seqLength(l));
-            testSequence{i, 2} = coding(idx:idx+seqLength(l)-1);
+            idx = randi(length(noncoding) - seqLength);
+            testSequence{i, 1} = noncoding(idx:idx+seqLength-1);
+            idx = randi(length(coding) - seqLength);
+            testSequence{i, 2} = coding(idx:idx+seqLength-1);
         end
 		
         trainSequence = reshape(trainSequence, 1, [])';
         testSequence = reshape(testSequence, 1, [])';
 
         groupSequences = true;
-        if (seqLength(l) >= 800)
+        if (seqLength >= 800)
             groupSequences = false;
         end
 
@@ -111,8 +109,8 @@ for k=1:length(species.accession)
 			[profileValsTrain{t, k}, AMIList] = getAMI(trainSequence, minK, maxK, profiles{t}, groupSequences);
             [profileValsTest{t, k},  ~       ] = getAMI(testSequence,  minK, maxK, profiles{t}, groupSequences);
 			
-			figLegend{2*t-1} = [profiles{t}, ' SVM'];
-            figLegend{2*t  } = [profiles{t}, ' Eucl. Dist.'];
+			sheetNames{2*t-1} = [profiles{t}, ' SVM'];
+            sheetNames{2*t  } = [profiles{t}, ' Eucl. Dist.'];
 			
             svmArgList = {'KernelFunction', 'linear', 'standardize', true, 'KernelScale', 'auto', 'BoxConstraint', .1 };
             cSVM{t, k} = fitcsvm(profileValsTrain{t, k}, allClass, svmArgList{:});
@@ -165,12 +163,12 @@ for t=1:length(profiles)
     a = [squeeze(AUCs(t, valid, valid)), squeeze(sens(t, valid, valid)), squeeze(spec(t, valid, valid))];
     a = a(:, reshape(reshape(1:size(a, 2), size(a, 2)/3, [])', 1, []));
     aTable = array2table(a, 'RowNames', species.organismName(valid));
-    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', figLegend{2*t-1}, 'Range', 'A2');
-    writecell(columnHeader, outputFile, 'Sheet', figLegend{2*t-1}, 'Range', 'B1');
-    writecell(columSubheader, outputFile, 'Sheet', figLegend{2*t-1}, 'Range', 'A2');
+    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', sheetNames{2*t-1}, 'Range', 'A2');
+    writecell(columnHeader, outputFile, 'Sheet', sheetNames{2*t-1}, 'Range', 'B1');
+    writecell(columSubheader, outputFile, 'Sheet', sheetNames{2*t-1}, 'Range', 'A2');
 	
     aTable = array2table(squeeze(AUCsEucl(t, valid, valid)), 'RowNames', species.organismName(valid));
-    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', figLegend{2*t}, 'Range', 'A2');
-    writecell(columnHeader, outputFile, 'Sheet', figLegend{2*t}, 'Range', 'B1');
-    writecell(columSubheader, outputFile, 'Sheet', figLegend{2*t}, 'Range', 'A2');
+    writetable(aTable, outputFile, 'WriteRow', true, 'Sheet', sheetNames{2*t}, 'Range', 'A2');
+    writecell(columnHeader, outputFile, 'Sheet', sheetNames{2*t}, 'Range', 'B1');
+    writecell(columSubheader, outputFile, 'Sheet', sheetNames{2*t}, 'Range', 'A2');
 end
